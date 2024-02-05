@@ -17,14 +17,20 @@
   - Country name
   - Postal code
 
-## User Experience Enhancement
-1. **Gender-based Recommendation:**
-   - By recommending items similar to the user's gender, the user experience is enhanced as it provides personalized recommendations tailored to the user's preferences.
-   - This feature increases user engagement by showcasing relevant products, ultimately leading to higher satisfaction and potentially increased conversions.
+## User Experience Enhancements
 
-2. **Native Currency Billing:**
-   - Users can now receive bills in their native currency, providing a much better experience compared to displaying prices in the default currency (USD).
-   - This feature eliminates confusion and enhances transparency by presenting pricing information in a familiar currency, leading to a smoother checkout process and improved user satisfaction.
+### 1. **Gender-based Recommendation:**
+
+- By recommending items similar to the user's gender, the user experience is enhanced as it provides personalized recommendations tailored to the user's preferences.
+
+- This feature increases user engagement by showcasing relevant products, ultimately leading to higher satisfaction and potentially increased conversions.
+
+### 2. **Native Currency Billing:**
+
+- Users can now receive bills in their native currency, providing a much better experience compared to displaying prices in the default currency (USD).
+
+- This feature eliminates confusion and enhances transparency by presenting pricing information in a familiar currency, leading to a smoother checkout process and improved user satisfaction.
+
 
 ## Cart.js File Modifications
 - Added functionality to fetch country information and convert currency when the component mounts.
