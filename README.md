@@ -80,11 +80,16 @@ The ProductDisplay component utilizes the gender information from the user's pro
 #### Code Snippet - Gender Recommendation Feature
 
 ```jsx
+// Filtering products based on user's gender
 const recommendationProducts = profile && profile.gender
   ? products.filter(product => product.gender === profile.gender || product.gender === 'unisex')
   : [];
 
-// Rendering Recommendation Section
+const exploreProducts = profile && profile.gender
+  ? products.filter(product => product.gender !== profile.gender)
+  : products;
+
+// Rendering recommendation section
 <div className="SectionCard RecommendationSection">
   <h2>Recommendation for you</h2>
   <div className="ProductItems">
@@ -98,6 +103,22 @@ const recommendationProducts = profile && profile.gender
     ))}
   </div>
 </div>
+
+// Rendering explore section
+<div className="SectionCard ExploreSection">
+  <h2>Explore other items</h2>
+  <div className="ProductItems">
+    {exploreProducts.map((product) => (
+      <div key={product.id} className="ProductItem">
+        <img src={product.imageUrl} alt={product.name} />
+        <h2>{product.name}</h2>
+        <p>${product.price}</p>
+        <button onClick={() => addToCart(product)}>Add to Cart</button>
+      </div>
+    ))}
+  </div>
+</div>
+
 ```
 ## Other Data Points Requested from the Vault
 - In addition to gender, the following data points are requested from the Vault:
@@ -117,11 +138,4 @@ const recommendationProducts = profile && profile.gender
 - Users can now receive bills in their native currency, providing a much better experience compared to displaying prices in the default currency (USD).
 
 - This feature eliminates confusion and enhances transparency by presenting pricing information in a familiar currency, leading to a smoother checkout process and improved user satisfaction.
-
-
-## Cart.js File Modifications
-- Added functionality to fetch country information and convert currency when the component mounts.
-- Implemented logic to calculate total price and extra charges based on the user's country.
-- Integrated the display of converted total price and currency code in the cart view.
-- Improved user experience by displaying delivery address information based on the user's postal code and country.
 
