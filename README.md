@@ -120,8 +120,9 @@ const exploreProducts = profile && profile.gender
 </div>
 
 ```
-## Other Data Points Requested from the Vault
-- In addition to gender, the following data points are requested from the Vault:
+## Data Points Requested from the Vault
+-  The following data points are requested from the Vault:
+  - Gender
   - Country name
   - Postal code
 
