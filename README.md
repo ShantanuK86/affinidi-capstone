@@ -2,11 +2,17 @@
 
 ## New Features and Code Added
 
-### Currency Conversion Feature
-- Added functionality to fetch the user's country information and currency code from their profile.
-- Integrated two APIs to convert the default currency (USD) of the website into the user's native currency.
-- Currency conversion is triggered when the component mounts, ensuring accurate pricing throughout the user's session.
-- Displayed the converted total price in the user's native currency along with the currency code in the cart view.
+### Country Name to Currency Code and Currency Conversion Feature
+The Cart component includes functionality to fetch country information, obtain the corresponding currency code, and perform currency conversion based on the user's profile. Here's how this feature works:
+
+- **Fetching Country Information:** The component retrieves country information using the profile.country property. It then makes a request to an API (https://api.api-ninjas.com/v1/country) to fetch details about the country, including its currency code. If the country information is successfully fetched, the currency code is extracted and stored using the setCurrencyCode hook.
+
+- **Currency Conversion:** Once the currency code is obtained, the component calculates the total price of items in the cart along with any additional charges. If the country is not equal to 'India', an extra charge of $15 is applied. The convertCurrency function then performs the currency conversion using another API (https://currency-converter-pro1.p.rapidapi.com/convert). The converted currency amount is stored in the conversionResult state variable.
+
+- **Displaying Currency Conversion Result:** The component renders the total price and any additional charges in the user's selected currency. If the conversion result is available (conversionResult is not null), it displays the converted total price along with the currency code.
+
+- **Displaying Delivery Address:** Additionally, the component displays the delivery address based on the user's profile, including the postal code and country.
+
 #### Code Snippet - Fetch Country Information and Convert Currency
 
 ```jsx
