@@ -71,7 +71,28 @@ The ProductDisplay component utilizes the gender information from the user's pro
 - **Displaying Recommendation Section:** The component renders a section titled "Recommendation for you" and displays products filtered based on the user's gender. Each recommended product is shown with its image, name, price, and an "Add to Cart" button.
 
 - **Explore Other Items:** Additionally, the component displays a section titled "Explore other items" where products not matching the user's gender are displayed. This section allows users to explore a wider range of products beyond their gender-specific recommendations.
+#### Code Snippet - Gender Recommendation Feature
 
+```jsx
+const recommendationProducts = profile && profile.gender
+  ? products.filter(product => product.gender === profile.gender || product.gender === 'unisex')
+  : [];
+
+// Rendering Recommendation Section
+<div className="SectionCard RecommendationSection">
+  <h2>Recommendation for you</h2>
+  <div className="ProductItems">
+    {recommendationProducts.map((product) => (
+      <div key={product.id} className="ProductItem">
+        <img src={product.imageUrl} alt={product.name} />
+        <h2>{product.name}</h2>
+        <p>${product.price}</p>
+        <button onClick={() => addToCart(product)}>Add to Cart</button>
+      </div>
+    ))}
+  </div>
+</div>
+```
 ## Other Data Points Requested from the Vault
 - In addition to gender, the following data points are requested from the Vault:
   - Country name
