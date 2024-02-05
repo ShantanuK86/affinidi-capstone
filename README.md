@@ -63,9 +63,14 @@ if (profile && profile.country) {
 }
 ```
 
-### Gender-based Recommendation Feature
-- Utilized the gender data point obtained from the user to recommend items on the website page accordingly.
-- Enhanced user experience by personalizing item recommendations based on the user's gender.
+### Gender Recommendation Feature
+The ProductDisplay component utilizes the gender information from the user's profile to provide personalized product recommendations. Here's how the gender recommendation feature works:
+
+- **Filtering Recommendation Products:** The products array contains various items with associated gender information. The recommendationProducts variable filters these products based on the user's gender. If the user's gender is available in the profile, it filters products that match the user's gender or are marked as 'unisex'.
+
+- **Displaying Recommendation Section:** The component renders a section titled "Recommendation for you" and displays products filtered based on the user's gender. Each recommended product is shown with its image, name, price, and an "Add to Cart" button.
+
+- **Explore Other Items:** Additionally, the component displays a section titled "Explore other items" where products not matching the user's gender are displayed. This section allows users to explore a wider range of products beyond their gender-specific recommendations.
 
 ## Other Data Points Requested from the Vault
 - In addition to gender, the following data points are requested from the Vault:
