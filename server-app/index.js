@@ -28,6 +28,7 @@ const initializeServer = async () => {
     app.listen(PORT, () => {
         console.log(`Server listening on ${PORT}`);
     });
+    app.set('trust proxy', 1);
 
 }
 
