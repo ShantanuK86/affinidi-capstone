@@ -7,7 +7,7 @@ import './Header.css';
 const Header = () => {
   const { setProfile } = useContext(UserContext);
   const { isLoading, error, profile, handleLogout } = useAffinidiProfile({
-    authCompleteUrl: '/api/affinidi-auth/complete'
+    authCompleteUrl: 'https://affinidi-capstone-woad.vercel.app/api/affinidi-auth/complete'
   });
 
   const [localProfile, setLocalProfile] = useState(null);
@@ -51,7 +51,7 @@ const Header = () => {
         );
       }
   
-  return <AffinidiLoginButton />;
+  return <AffinidiLoginButton authInitUrl='https://affinidi-capstone-woad.vercel.app/api/affinidi-auth/init'/>;
     };
   
     return (
