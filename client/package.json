@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://affinidi-capstone-woad.vercel.app/",
+  "proxy": "https://affinidi-capstone-woad.vercel.app",
   "eslintConfig": {
     "extends": [
       "react-app",
