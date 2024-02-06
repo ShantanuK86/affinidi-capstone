@@ -9,8 +9,7 @@ const Header = () => {
   const { isLoading, error, profile, handleLogout } = useAffinidiProfile({
     authCompleteUrl: 'https://affinidi-capstone-woad.vercel.app/api/affinidi-auth/complete'
   });
-  {!profile && <> <AffinidiLoginButton authInitUrl='https://affinidi-capstone-woad.vercel.app/api/affinidi-auth/init'/> </>}
-
+  
   const [localProfile, setLocalProfile] = useState(null);
 
   useEffect(() => {
